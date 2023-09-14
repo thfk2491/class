@@ -4,73 +4,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>boxmodel</title>
+  <title>boxmodel 2-박스계산법</title>
   <!-- 외부의 css를 불러올때 -->
   <link rel="stylesheet" href="asset/css/style1.css">
   <!-- html 문서내에서 css 선언 -->
   <style>
-    .box{
-      /* border-color: #000;
-      border-style: solid;
-      border-width: 1px; */
-      border:#000 dotted 10px;
-      border-top-color: #f00;
-      background-color: #ccc;
-      /* 안쪽 여백 padding 
-         padding:상 우 하 좌;
-         padding:상 좌우  하;
-         padding:상하 좌우;
-         padding:상우하좌;
-      */
-      padding:10px 20px 30px 40px;
-      
-      /* 바깥쪽 여백 margin 
-      margin:상 우 하 좌;
-      margin:상 좌우  하;
-      margin:상하 좌우;
-      margin:상우하좌;
-      */
-      /* margin:50px; */
-    }
-
-    /* 
-    .box 중에서 두번째 padding을 28px 50px
-    선택자
-      두번째 .box
-    속성
-      padding을 상우하좌 50px -> padding:50px;
-    */
-   .box:nth-of-type(2){
-      padding:28px 50px;
-      background-color: #f00;
-    }
-   .box:nth-of-type(3){
-      padding:10px 20px 30px;
-      background-color: #00f;
-    }
-
-  /* block 레벨 */
-  *{padding:0;margin:0;}
+   /* block 레벨 */
+  
   /* 
   요소의 수평크기
   lm+lb+lp+content(width)+rp+rb+rm
   요소의 수직크기
   tm+tb+tp+content(height)+bp+bb+bm
   */
-   h1{
-    background-color: #f68;
+  *{padding:0;margin:0;}
+   h1{    background-color: #f68;   }
 
-   }
-
-   .box:nth-of-type(1){
-    margin:50px;
-   }
+   .box:nth-of-type(1){    margin:50px;   }
 
    .box:nth-of-type(2){
       width:300px;
       margin:100px auto;
       /* margin:상하 auto; 블록레벨을 가운데 위치*/
-
    }
   </style>
   
