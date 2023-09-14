@@ -22,10 +22,53 @@
 
    .box:nth-of-type(1){    margin:50px;   }
 
+   /* 
+   요소의 수평크기
+  lm+lb+lp+content(width)+rp+rb+rm
+      lb1+lp50+width300+rp50+rb1
+      1+50+300+50+1
+  */
    .box:nth-of-type(2){
+      background-color: #ccc;
       width:300px;
-      margin:100px auto;
+      padding:30px 50px;
+      border:1px solid #000;
+      /* margin:100px auto; */
       /* margin:상하 auto; 블록레벨을 가운데 위치*/
+      text-align: center;
+   }
+   
+   ul{
+    width:80%;
+    margin:50px auto;
+    background-color: #ccc;
+    /*block 레벨의 자식 중 인라인레벨과 텍스트을 정렬*/
+    text-align: center; 
+   }
+   ul li{
+    background-color: #f68;
+    /*inline레벨은 크기적용x*/
+    /* width:100px;  */
+    /* width:25%; */
+    width: calc(25% - 4px);
+    /* padding:2rem; */
+    /*display 속성으로 block - inline 전환*/
+    /* inline-block 인라인 줄바꿈없는 특징, 블록의 크기지정 특징 */
+    display: inline-block;
+   }
+   
+   .test{
+    /* inline레벨은 수직여백은 정상적으로 적용x */
+    /* inline레벨은 크기지정을 할 수 없어요
+      inline 레벨은 자신이 포함한 내용만큼의 크기를 유지
+    */
+    background-color: #6f8;
+    border:1px solid #000;
+    /* padding:50px;
+    margin:50px; */
+    padding:0 1rem;
+    margin:0 2rem;
+    width:300px;
    }
   </style>
   
@@ -34,7 +77,7 @@
 <body>
   <h1 class="page-title">웹폰트 사용</h1>
 
-  <div class="box">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit deleniti voluptates nisi veniam, debitis laboriosam accusantium dolorum tenetur eum adipisci temporibus expedita cumque nulla illum modi a qui. Eos, cupiditate?</div>
+  <div class="box">Lorem <span class="test">ipsum dolor</span> sit <span class="test">amet consectetur</span> adipisicing elit. Reprehenderit deleniti voluptates nisi veniam, debitis laboriosam accusantium dolorum tenetur eum adipisci temporibus expedita cumque nulla illum modi a qui. Eos, cupiditate?</div>
   <!-- .box>lorem -->
   <div class="box">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum qui pariatur eveniet quas at illo placeat aliquam enim tenetur magni, velit iste ab architecto quae! Assumenda fugit id sit suscipit!</div>
   <!-- ul>li*4>a>{text$} -->
