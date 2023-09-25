@@ -67,7 +67,9 @@
       /* 일반흐름제외 , 기준조상 설정 */
       position: absolute;
       left:0px; bottom:0px;
-      background-color: rgba(255,255,255,0.5);
+      
+
+      background-color: rgba(255,0,0,0.5);
       /*일반흐름에서 제외되었지만 기준조상으로 너비를 가져옵니다.*/
       width:100%;
       padding:1em;
@@ -77,8 +79,35 @@
     /* transform 설정 시작 */
     .ec-base-product .prdList .description{
       /* 본인요소의 크기만큰 y축으로 이동 */
+      /* 자신의 높이만큼 아래로 이동 */
+      transform: translate(0,100%);
+      transition: all 0.1s;
       
     }
+
+
+    /* transition */
+    /* 
+    li에 마우스를 오버하면
+    .desctiption의 원위치 자신의 변경
+    
+    li에 마우스를 오버하면 
+    .ec-base-product .prdList >li:hover
+
+    변경  
+        요소
+        .ec-base-product .prdList .description
+
+        원래 위치변경
+        transform:translate(x,y)
+    */
+    .ec-base-product .prdList >li:hover  .description{
+      transform: translate(0,0);
+      background-color: rgba(255,255,255,0.9);
+      transition:all 0.5s;
+    }
+
+
 
   </style>
 </head>
