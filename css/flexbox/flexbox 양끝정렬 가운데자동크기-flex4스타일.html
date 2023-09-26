@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>flexbox 정렬과 margin이 auto</title>
+  <title>flexbox 양끝정렬 가운데자동크기-flex4스타일</title>
   <style>
     *{margin: 0; padding: 0; box-sizing: border-box;}
     .wrap{
@@ -35,16 +35,17 @@
     .parent{
       display: flex;
       flex-direction: row;/*진행수평방향*/
-      justify-content: flex-start;/*주축정렬*/
-      align-items: stretch;/*교차축정렬*/
+      justify-content: space-between;/*주축 양끝정렬*/
+      align-items: center;/*교차축정렬*/
     }
     .item{
-      flex-grow: 0; /*아이템확장여부 x*/
-      flex-shrink: 1;/*아이템축소여부 0*/
-      flex-basis: auto;
-      /*주축의 width/height 가 선언되어  width/height 크기 
-      주축의 width/height 가 선언되어x  아이템이 포함하고 있는 내용의 크기*/
-      align-self: auto;/*교차축정렬인 align-items를 따르겠다*/
+      /* 플렉스아이템의 고유크기 고정 */
+      flex:none;
+    }
+    .gnb.item{
+      flex-grow: 1;
+      margin-left:50px;
+      margin-right: 50px;
     }
   </style>
 </head>
@@ -54,7 +55,7 @@
     <header>
       <div class="inner parent">
         <div class="logo item">로고</div>
-        <div class="gnb item">카테고리(글로벌네비게이션바)</div>
+        <div class="gnb item">카테고리(글로벌네비게이션바) 카테고리(글로벌네비게이션바)</div>
         <div class="util item">상단유틸메뉴</div>
       </div>
     </header>
