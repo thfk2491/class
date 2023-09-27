@@ -117,8 +117,51 @@ html {
   display: flex;
 }
 
+
 .flex-direction-column{
   flex-direction: column;
 }
 
+.item{
+  
+  background-color: rgba(0,0,255,0.5);/*테스트*/
+  border: 1px solid #000;/*테스트*/
+}
 
+.test{
+  background-color: #00f;
+  min-height: 100px;
+}
+
+
+/* header */
+header{
+  position: fixed;
+  width:100%;
+
+  background-color: rgba(255,255,255,0.3);
+  border: 1px solid #000;
+}
+
+.header_wrap{
+  max-width: 1440px;
+  margin:0 auto;
+  /*  display: flex; flex-container선언 */
+  justify-content: space-between;
+  align-items: center; 
+
+}
+
+/* .header_wrap .header_logo,
+.header_wrap nav,
+.header_wrap .header_util{
+  flex:none;
+} */
+
+
+
+/* .container */
+.container{
+  padding:80px 0 160px;
+  background-color: #ccc;/*테스트용*/
+}
