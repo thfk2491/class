@@ -157,6 +157,13 @@ header{
 .header_wrap .header_util{
   flex:none;
 } */
+.header_wrap .header_logo a{
+  display: block;
+  width:90px; height: 20px;
+  background:url(../image/header_logo.png) no-repeat 50% 50%;
+}
+
+
 
 
 
