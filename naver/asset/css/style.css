@@ -112,6 +112,7 @@ em {
 :root{
   --header-height:80px;
   --primary-color:#1ec545;
+  --primary-color-dark:#0fb93c;
 }
 
 /* 공통 */
@@ -202,9 +203,12 @@ display: inline-block;
 nav .gnb_menu .gnb_menu_list a.gnb_menu_item{
   position: relative;/*nav .gnb_menu .gnb_menu_list:hover a.gnb_menu_item::before 기준조상*/
   display: block;
-  font-size:15px;
-  line-height: var(--header-height);
   margin:0 30px;
+  line-height: var(--header-height);
+  font-size:15px;
+  color:#000;
+  font-weight: bold;
+
 }
 
 /* 
@@ -231,6 +235,7 @@ nav .gnb_menu .gnb_menu_list a.gnb_menu_item::before{
   transform: scaleX(0);
   transition: transform 0.2s;
   transform-origin: 100% 0;
+  
 
 }
 nav .gnb_menu .gnb_menu_list:hover a.gnb_menu_item::before{
@@ -242,25 +247,56 @@ nav .gnb_menu .gnb_menu_list:hover a.gnb_menu_item::before{
 
 
 nav .gnb_menu .gnb_menu_list ul.gnb_dropMenu_wrap{
-  /* depth2 
-  d1 마우스 호버할 때 드롭다운되는 메뉴
-  */
+  /* depth2  d1 mouseover(mouseenter)할 때 드롭다운되는 메뉴*/
   position: absolute;
+  width:100%;
+  left:0;
+  background-color: var(--primary-color);
+ 
   
-  /*테스트용*/
-  display: none;
+  display: none;/*테스트후 flex로 처리*/
 }
 /* 1번메뉴를 위한 테스트 선택자 */
 nav .gnb_menu .gnb_menu_list:nth-child(1) ul.gnb_dropMenu_wrap{
-  display: block;
+   /* gnb_dropMenu_wrap>li 수평으로 오게 하기 위해서  display: flex; */
+   display: flex; 
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
 }
 
-nav .gnb_menu .gnb_menu_list ul.gnb_dropMenu_wrap li{
+nav .gnb_menu .gnb_menu_list ul.gnb_dropMenu_wrap> li{
   font-size:14px;
+  width:190px; 
+  height: 367px;
+  padding:28px 0 0;
+  
 }
-nav .gnb_menu .gnb_menu_list ul.gnb_dropMenu_wrap li .gnb_dropMenu{}
-nav .gnb_menu .gnb_menu_list ul.gnb_dropMenu_wrap li .gnb_dropMenu .gnb_dropMenu_item{}
+nav .gnb_menu .gnb_menu_list ul.gnb_dropMenu_wrap> li:hover{
+  background-color: var(--primary-color-dark);
+}
 
+nav .gnb_menu .gnb_menu_list ul.gnb_dropMenu_wrap li .gnb_dropMenu{
+  padding-left:2em;
+}
+nav .gnb_menu .gnb_menu_list ul.gnb_dropMenu_wrap li .gnb_dropMenu .depth_blank{
+  margin-bottom:14px;
+}
+nav .gnb_menu .gnb_menu_list ul.gnb_dropMenu_wrap li .gnb_dropMenu>li{
+  margin-bottom:7px;
+}
+
+nav ul.gnb_dropMenu_wrap li .gnb_dropMenu .gnb_dropMenu_item{
+  color:#fff
+}
+nav ul.gnb_dropMenu_wrap li .gnb_dropMenu .gnb_dropMenu_item strong span{
+  opacity:1;
+  font-weight: bold;
+
+}
+nav ul.gnb_dropMenu_wrap li .gnb_dropMenu .gnb_dropMenu_item span {
+  opacity:0.8;
+}
 
 
 
