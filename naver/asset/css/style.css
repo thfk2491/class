@@ -188,6 +188,35 @@ header{
   height: var(--header-height);
 }
 
+nav .gnb_menu{
+  font-size:0;
+}
+nav .gnb_menu .gnb_menu_list,
+nav .gnb_menu .gnb_menu_list_recruit{
+/* li 수평으로 나란히  */
+display: inline-block;
+
+background-color: #f00;/*테스트*/
+border: 1px solid #000;/*테스트*/
+
+}
+nav .gnb_menu .gnb_menu_list a.gnb_menu_item{
+  font-size:15px;
+}
+
+
+nav .gnb_menu .gnb_menu_list ul.gnb_dropMenu_wrap{
+  /* depth2 
+  d1 마우스 호버할 때 드롭다운되는 ㅁ뉴
+  */
+  position: absolute;
+  display: none;/*테스트용*/
+}
+
+nav .gnb_menu .gnb_menu_list ul.gnb_dropMenu_wrap li{}
+nav .gnb_menu .gnb_menu_list ul.gnb_dropMenu_wrap li .gnb_dropMenu{}
+nav .gnb_menu .gnb_menu_list ul.gnb_dropMenu_wrap li .gnb_dropMenu .gnb_menu_item{}
+
 
 
 
