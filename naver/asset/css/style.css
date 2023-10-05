@@ -340,8 +340,17 @@ nav ul.gnb_dropMenu_wrap li .gnb_dropMenu .classify:first-child{
   border-top:0 none;
 }
 
-.header_util{}
-.header_util .header_lang{}
+.header_util{
+  /* 
+  .header_util .header_lang{}
+   .header_util .sitemap_box{}
+   flex item으로 만들기 위해
+   */
+  display: flex;
+}
+.header_util .header_lang{
+  margin-right:2em;
+}
 .header_util .header_lang a{
   position: relative;
   color:#000;
@@ -363,11 +372,52 @@ nav ul.gnb_dropMenu_wrap li .gnb_dropMenu .classify:first-child{
   opacity:0.7;
 }
 
-/* <div class="header_util item">
-<div class="header_lang">
-</div>
-<div class="sitemap_box"></div>
-</div> */
+
+.header_util .sitemap_box{
+  position: relative;/*.header_util .sitemap_box .btn_line 기준*/
+  width:24px;
+}
+.header_util .sitemap_box .btn_line{
+  position: absolute;
+  right:0;
+  display: block;
+  width:24px; height: 2px;
+  background-color: #000;
+  transition: transform 0.2s;/*추가*/
+}
+
+ .header_util .sitemap_box .btn_line:nth-of-type(2){
+  top:2px;
+  /* width:calc(24px - 2px); */
+ }
+ .header_util .sitemap_box .btn_line:nth-of-type(3){
+  top:10px;
+  /* width:calc(24px - 4px); */
+ }
+
+ .header_util .sitemap_box .btn_line:nth-of-type(4){
+  top:18px;
+ }
+
+ /* 사용자가 햄버거 메뉴를 클릭한 상태
+   header.active
+ */
+ header.active .header_util .sitemap_box .btn_line{
+    background-color: #fff;
+    transition: transform 0.2s;/*추가*/
+ }
+
+ header.active .header_util .sitemap_box .btn_line:nth-of-type(2){
+  transform: rotate(-45deg) translateY(11px);
+ }
+ header.active .header_util .sitemap_box .btn_line:nth-of-type(3){
+  opacity:0;
+ }
+
+ header.active .header_util .sitemap_box .btn_line:nth-of-type(4){
+  transform: rotate(45deg) translateY(-11px);
+ }
+
 
 
 
