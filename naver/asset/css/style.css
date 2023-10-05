@@ -450,10 +450,22 @@ background-color: var(--primary-color);
   transform: rotate(45deg) translate(-3px, -4px);
  }
 
+ /* <div class="sitemap">
+        <div class="box"></div>
+      </div> */
 
+header .sitemap{
+   display:none;
+   position: fixed;
+   left:0;   top:var(--header-height);
+   width:100%;
+   height: calc(100vh - var(--header-height) );
+   background-color: var(--primary-color);
+}
 
-
-
+header.active .sitemap{
+  display:block;
+}
 
 
 /* .container */
