@@ -142,11 +142,13 @@ html {
   flex-direction: column;
 }
 
+/* 
 .item{
   
-  background-color: rgba(0,0,255,0.5);/*테스트*/
-  border: 1px solid #000;/*테스트*/
-}
+  background-color: rgba(0,0,255,0.5);
+  border: 1px solid #000;
+} 
+*/
 
 .test{
   background-color: #00f;
@@ -246,24 +248,31 @@ nav .gnb_menu .gnb_menu_list:hover a.gnb_menu_item::before{
 }
 
 
-
+/* 
+li마우스오버시  ul.gnb_dropMenu_wrap
+ display:none;과
+ display:fex; 로 화면표시 제어
+*/
 nav .gnb_menu .gnb_menu_list ul.gnb_dropMenu_wrap{
   /* depth2  d1 mouseover(mouseenter)할 때 드롭다운되는 메뉴*/
   position: absolute;
   width:100%;
   left:0;
   background-color: var(--primary-color);
- 
-  
   display: none;/*테스트후 flex로 처리*/
-}
-/* 1번메뉴를 위한 테스트 선택자 */
-nav .gnb_menu .gnb_menu_list:nth-child(1) ul.gnb_dropMenu_wrap{
-   /* gnb_dropMenu_wrap>li 수평으로 오게 하기 위해서  display: flex; */
-   display: flex; 
+  /* display: flex;  */
   flex-direction: row;
   justify-content: center;
   align-items: stretch;
+}
+/* 1번메뉴를 위한 테스트 선택자 */
+/* .gnb_menu_list:nth-child(1)  1~7번으로 확인하면서 체크 */
+nav .gnb_menu .gnb_menu_list:nth-child(1) ul.gnb_dropMenu_wrap{
+   /* gnb_dropMenu_wrap>li 수평으로 오게 하기 위해서  display: flex;*/
+   /* display: flex; 
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch; */
 }
 
 nav .gnb_menu .gnb_menu_list ul.gnb_dropMenu_wrap> li{
@@ -283,19 +292,30 @@ nav .gnb_menu .gnb_menu_list ul.gnb_dropMenu_wrap> li::before{
   background-color: rgba(255,255,255,0.2);
 
 }
+nav .gnb_menu .gnb_menu_list ul.gnb_dropMenu_wrap> li:last-child:after{
+  content: '';
+  display: block;
+  position: absolute;
+  right:0; top:0;
+  width:1px; height: 100%;
+  background-color: rgba(255,255,255,0.2);
+
+}
 
 nav .gnb_menu .gnb_menu_list ul.gnb_dropMenu_wrap> li:hover{
   background-color: var(--primary-color-dark);
 }
 
 nav .gnb_menu .gnb_menu_list ul.gnb_dropMenu_wrap li .gnb_dropMenu{
-  padding-left:2em;
+  /* padding-left:2em; */
 }
 nav .gnb_menu .gnb_menu_list ul.gnb_dropMenu_wrap li .gnb_dropMenu .depth_blank{
   margin-bottom:14px;
 }
 nav .gnb_menu .gnb_menu_list ul.gnb_dropMenu_wrap li .gnb_dropMenu>li{
   margin-bottom:7px;
+  padding-left:20px;
+
 }
 
 nav ul.gnb_dropMenu_wrap li .gnb_dropMenu .gnb_dropMenu_item{
@@ -309,6 +329,47 @@ nav ul.gnb_dropMenu_wrap li .gnb_dropMenu .gnb_dropMenu_item strong span{
 nav ul.gnb_dropMenu_wrap li .gnb_dropMenu .gnb_dropMenu_item span {
   opacity:0.8;
 }
+
+nav ul.gnb_dropMenu_wrap li .gnb_dropMenu .classify{
+  margin-bottom:20px;
+  border-top:1px solid rgba(2255,255,255,0.2);
+  padding-top:20px;
+}
+nav ul.gnb_dropMenu_wrap li .gnb_dropMenu .classify:first-child{
+  padding-top:0;
+  border-top:0 none;
+}
+
+.header_util{}
+.header_util .header_lang{}
+.header_util .header_lang a{
+  position: relative;
+  color:#000;
+  opacity:1;
+  font-size: 12px;
+  padding:0 0.5em;
+}
+.header_util .header_lang a:first-child::after{
+  content: '';
+  position: absolute;
+  right:-3px; top:0;
+  display: block;
+  width: 1px;
+  height: 100%;
+  background-color: #000;
+
+}
+.header_util .header_lang a[aria-selected="false"]{
+  opacity:0.7;
+}
+
+/* <div class="header_util item">
+<div class="header_lang">
+</div>
+<div class="sitemap_box"></div>
+</div> */
+
+
 
 
 
