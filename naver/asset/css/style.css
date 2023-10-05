@@ -200,7 +200,8 @@ nav .gnb_menu .gnb_menu_list_recruit{
 /* li 수평으로 나란히  */
 display: inline-block;
 }
-nav .gnb_menu .gnb_menu_list a.gnb_menu_item{
+/* nav .gnb_menu .gnb_menu_list a.gnb_menu_item{ */
+nav .gnb_menu  a.gnb_menu_item{
   position: relative;/*nav .gnb_menu .gnb_menu_list:hover a.gnb_menu_item::before 기준조상*/
   display: block;
   margin:0 30px;
@@ -266,12 +267,23 @@ nav .gnb_menu .gnb_menu_list:nth-child(1) ul.gnb_dropMenu_wrap{
 }
 
 nav .gnb_menu .gnb_menu_list ul.gnb_dropMenu_wrap> li{
+  position: relative;/*nav .gnb_menu .gnb_menu_list ul.gnb_dropMenu_wrap> li::before{ 기준*/
   font-size:14px;
   width:190px; 
   height: 367px;
   padding:28px 0 0;
   
 }
+nav .gnb_menu .gnb_menu_list ul.gnb_dropMenu_wrap> li::before{
+  content: '';
+  display: block;
+  position: absolute;
+  left:0; top:0;
+  width:1px; height: 100%;
+  background-color: rgba(255,255,255,0.2);
+
+}
+
 nav .gnb_menu .gnb_menu_list ul.gnb_dropMenu_wrap> li:hover{
   background-color: var(--primary-color-dark);
 }
