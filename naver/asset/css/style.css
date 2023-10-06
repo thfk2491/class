@@ -473,3 +473,22 @@ header.active .sitemap{
   padding:80px 0 160px;
   background-color: #ccc;/*테스트용*/
 }
+
+.main_slide{}
+
+/*swiper css 수정 */
+.main_slide .swiper-button-next, 
+.main_slide .swiper-button-prev{
+  width:50px; height: 55px;
+  background:  url(../image/sprite.png) no-repeat;
+}
+.main_slide .swiper-button-prev{
+  background-position: -294px -96px;
+}
+.main_slide .swiper-button-next{
+  background-position: -345px -96px;
+}
+.main_slide .swiper-button-next:after, 
+.main_slide .swiper-button-prev:after{
+  content:'';
+}
