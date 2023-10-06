@@ -4,7 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>클론코딩-네이버</title>
+  <!-- swiper 관련css -->
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+  />
+
   <link rel="stylesheet" href="asset/css/style.css">
+
   <!-- jquery 설치 -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
@@ -22,7 +29,7 @@
       );
     </script>
     <!-- header -->
-    <header class="header_down active">
+    <header class="header_down">
       <div class="header_wrap flex-container">
         <h1 class="header_logo item">
           <a href="/"><span class="blind">네이버</span></a>
@@ -393,11 +400,81 @@
     <!-- //header -->
     <!-- container -->
     <div class="container">
-      <div class="test"></div>
+      <div class="main_slide swiper">
+        
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">
+            <img src="asset/image/img_main_slide9.jpg" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="asset/image/img_main_slide11.jpg" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="asset/image/img_main_slide12.jpg" alt="" />
+          </div>
+        </div>
+        <!-- //.swiper-wrapper -->
+
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+        <!-- If we need scrollbar -->
+        <div class="swiper-scrollbar"></div>
+
+      </div>
+      <!-- //.main_slide-->
+
+      <div class="main_content">
+
+      </div>
+      <!-- //.main_content-->
+
     </div>
     <!-- //.container -->
 
   </div>
+
+  <!-- swiper js 플러그인 -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
   
+  <!-- swiper .main_slide 연결 -->
+  <script>
+    const swiper_mainSlide = new Swiper(".main_slide", {
+      // Optional parameters
+      direction: "horizontal", //방향수평
+      loop: true, //반복실행
+
+      //autoplay 자동실행
+      autoplay: {
+        delay: 2500, //대기시간
+      },
+
+      //pagination
+      pagination: {
+        el: ".swiper-pagination",
+        //type: 'fraction',  //블릿대신 번호로 표시
+        //type : "progressbar", //블릿대신 진행바 표시
+        type : 'fraction',
+      },
+
+      // Navigation arrows
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+
+      // And if we need scrollbar
+      scrollbar: {
+        el: '.swiper-scrollbar',
+      },
+      
+    });
+    </script>
 </body>
 </html>
