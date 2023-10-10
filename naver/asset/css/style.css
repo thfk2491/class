@@ -516,7 +516,7 @@ header.active .sitemap{
   background-color: rgba(255,255,255,0.3);
   overflow: hidden;
 }
-.main_slide.swiper-scrollbar-drag{
+.main_slide .swiper-scrollbar-drag{
   background-color: #fff; 
   /* position: relative;  기본 swiper css에 지정되어 있어요*/
 }
