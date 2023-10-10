@@ -516,6 +516,7 @@ header.active .sitemap{
   background:  url(../image/sprite.png) no-repeat;
   top:auto; bottom:220px;
 }
+
 .main_slide .swiper-button-prev{
   background-position: -294px -96px;
   left:calc(150px - 50px - 10px);
@@ -589,6 +590,30 @@ header.active .sitemap{
 
 /* swiper css 수정 완료 */
 
+/* swiper 미디어쿼리 */
+@media (max-width:768px){
+  .main_slide .swiper-scrollbar{
+    bottom:calc(150px + 20px);
+    left:calc(50px + 50px); right:50px;
+    width:calc(100% - 50px - 50px - 50px);
+  }
+
+  .main_slide .swiper-pagination-fraction{
+    top:auto;
+    bottom:calc(150px + 14px);
+    left:50px; 
+    width:auto;
+    text-shadow: 0 0 5px rgba(0,0,0,0.8);
+  }
+
+  .main_slide .swiper-button-next, 
+  .main_slide .swiper-button-prev{
+    display: none;
+  }
+  
+
+}/*@media (max-width:768px)*/
+
 
 /* slide-info 슬라이드 글상자 */
 .main_slide .swiper-slide .slide-info{
@@ -633,4 +658,17 @@ header.active .sitemap{
 .main_slide .slide-info .slide_text_box .slide_text{
   font-size: 15px;
   line-height: 1.6;
+}
+
+@media (max-width:768px){
+  .main_slide .slide-info .slide_text_box{
+    padding:0 50px 0px;
+  }
+  .main_slide .slide-info .slide_text_box .slide_title{
+    font-size: 2em;
+    text-shadow: 0px 0px 5px rgba(0,0,0,0.8);
+  }
+  .main_slide .slide-info .slide_text_box .slide_text{
+    display: none;
+  }
 }
