@@ -4,7 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>클론코딩-네이버</title>
+  <!-- swiper 관련css -->
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+  />
+
   <link rel="stylesheet" href="asset/css/style.css">
+
   <!-- jquery 설치 -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
@@ -22,7 +29,7 @@
       );
     </script>
     <!-- header -->
-    <header class="header_down active">
+    <header class="header_down">
       <div class="header_wrap flex-container">
         <h1 class="header_logo item">
           <a href="/"><span class="blind">네이버</span></a>
@@ -393,11 +400,127 @@
     <!-- //header -->
     <!-- container -->
     <div class="container">
-      <div class="test"></div>
+      <div class="main_slide swiper">
+        
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">
+            <picture>
+              <source 
+                srcset="asset/image/img_main_slide9-m.jpg" 
+                media="(max-width:768px)"
+                >
+              <img src="asset/image/img_main_slide9.jpg" alt="" />
+            </picture>
+            <div class="slide-info">
+              <a href="https://campaign.nbilly.naver.com/navergenerativeai" target="_blank" class="slide_info_box" >
+                <h2 class="slide_logo teamnaver"><span class="blind">NAVER GENERATIVE AI</span></h2>
+                <div class="slide_text_box">
+                  <p class="slide_title"><strong>모두의 기술 경쟁력, 네이버 AI</strong></p>
+                  <p class="slide_text"><span>모두가 AI를 일상의 경쟁력으로 누릴 수 있도록,<br>팀네이버의 생성형 AI 생태계에서 당신만의 기회를 발견하세요.</span></p>
+                </div>
+              </a>
+            </div>
+            
+          </div>
+          <div class="swiper-slide">
+            <picture>
+              <source 
+                srcset="asset/image/img_main_slide11-m.jpg" 
+                media="(max-width:768px)"
+                >
+              <img src="asset/image/img_main_slide11.jpg" alt="" />
+            </picture>
+            <div class="slide-info">
+              <a href="https://campaign.naver.com/environment" target="_blank" class="slide_info_box" >
+                <h2 class="slide_logo naver "><span class="blind">네이버 환경</span></h2>
+                <div class="slide_text_box">
+                  <p class="slide_title"><strong>건강한 지구를 위해<br>네이버가 Green 계획을 소개합니다.</strong></p>
+                  <p class="slide_text"><span>디지털 친환경부터 지구를 위한 가장 쉽고 착한 소비까지<br>네이버의 기술력과 파트너와의 공동 노력으로 친환경 생태계를 확대해 나가고 있습니다.</span></p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <picture>
+              <source 
+                srcset="asset/image/img_main_slide12-m.jpg" 
+                media="(max-width:768px)"
+                >
+              <img src="asset/image/img_main_slide12.jpg" alt="" />
+            </picture>
+            <div class="slide-info">
+              <a href="https://1784.navercorp.com" target="_blank" class="slide_info_box" >
+                <h2 class="slide_logo"><span class="blind">네이버 1784</span></h2>
+                <div class="slide_text_box">
+                  <p class="slide_title"><strong>네이버 1784에서<br>우리는 혁신을 현실로 만들고 있습니다.</strong></p>
+                  <p class="slide_text"><span>네이버의 다양한 기술들로 실험과 도전, 융합을 통해<br>새로운 기회와 가능성을 만들어 갑니다.</span></p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- //.swiper-wrapper -->
+
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+        <!-- If we need scrollbar -->
+        <div class="swiper-scrollbar"></div>
+
+      </div>
+      <!-- //.main_slide-->
+
+      <div class="main_content">
+
+      </div>
+      <!-- //.main_content-->
+
     </div>
     <!-- //.container -->
 
   </div>
-  
+
+  <!-- swiper js 플러그인 -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+  <!-- swiper .main_slide 연결 -->
+  <script>
+    const swiper_mainSlide = new Swiper(".main_slide", {
+      // Optional parameters
+      direction: "horizontal", //방향수평
+      loop: true, //반복실행
+
+      //autoplay 자동실행
+      // autoplay: {
+      //   delay: 2500, //대기시간
+      // },
+
+      //pagination
+      pagination: {
+        el: ".swiper-pagination",
+        //type: 'fraction',  //블릿대신 번호로 표시
+        //type : "progressbar", //블릿대신 진행바 표시
+        type : 'fraction',
+      },
+
+      // Navigation arrows
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+
+      // And if we need scrollbar
+      scrollbar: {
+        el: '.swiper-scrollbar',
+      },
+      
+    });
+    </script>
 </body>
 </html>
