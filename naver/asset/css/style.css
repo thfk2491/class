@@ -113,6 +113,8 @@ em {
   --header-height:80px;
   --primary-color:#1ec545;
   --primary-color-dark:#0fb93c;
+  --padding-h-pc:150px;
+  --padding-h-m:50px;
 }
 
 /* 공통 */
@@ -647,7 +649,7 @@ header.active .sitemap{
 .main_slide .slide-info .slide_text_box{
    position: absolute;
    left:0; bottom:150px;
-   padding:0 150px;
+   padding:0 var(--padding-h-pc);
 }
 .main_slide .slide-info .slide_text_box .slide_title strong{/*선택자 수정*/
   display: block; /*strong block 전환*/
@@ -667,7 +669,7 @@ header.active .sitemap{
 
 @media (max-width:768px){
   .main_slide .slide-info .slide_text_box{
-    padding:0 50px 0px;
+    padding:0 var(--padding-h-m) 0px;
   }
   .main_slide .slide-info .slide_text_box .slide_title{
     font-size: 2em;
@@ -678,3 +680,36 @@ header.active .sitemap{
   }
 }
 
+
+/* main_content */
+.main_content{
+  padding:120px var(--padding-h-pc);
+}
+
+@media (max-width:768px){
+  .main_content{
+    padding:120px var(--padding-h-m);
+  }
+}
+
+.main_content ul.content_summary{
+  display: flex;
+  /*
+  기본값
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  */
+}
+.content_summary li.summary_container{
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  width:25%; /*flex-basis:auto하고 width지정*/
+  padding:0 50px;
+
+  border: 1px solid #000;/*테스트*/
+}
+.content_summary .summary_title{}
+.content_summary .desc_box{}
+.content_summary .summary_link{}
