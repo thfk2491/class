@@ -437,8 +437,9 @@ header.active .header_util .header_lang a:first-child::after{
   background-color: #000;
   transition: all 0.2s;/*수정*/
 }
-.header_util .sitemap_box:hover .btn_line{
-background-color: var(--primary-color);
+.header_util .sitemap_box:hover .btn_line {
+  background-color: var(--primary-color);
+
 }
 
  .header_util .sitemap_box .btn_line:nth-of-type(2){
@@ -478,13 +479,14 @@ background-color: var(--primary-color);
         <div class="box"></div>
       </div> */
 
-header .sitemap{
-   display:none;
-   position: fixed;
-   left:0;   top:var(--header-height);
-   width:100%;
-   height: calc(100vh - var(--header-height) );
-   background-color: var(--primary-color);
+header .sitemap {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: var(--header-height);
+  width: 100%;
+  height: calc(100vh - var(--header-height));
+  background-color: var(--primary-color);
 }
 
 header.active .sitemap{
@@ -643,6 +645,7 @@ header.active .sitemap{
   width:156px; height: 40px;
   background-image: url(../image/sprite.png);
   background-position: -192px -1057px;
+  
 }
 
 .main_slide .slide-info .slide_text_box{
