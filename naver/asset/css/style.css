@@ -736,7 +736,20 @@ header.active .sitemap{
   text-transform: uppercase;/*입력된 영문과 상관없이 대문자로 표시*/
   margin-bottom:30px;
 }
-.content_summary .desc_box{}
+.content_summary .desc_box{
+  margin-bottom:30px;
+}
+.content_summary .desc_box .news_box{}
+.content_summary .news_box a{
+  
+}
+.content_summary .news_box .news_title{
+  color:#000;
+}
+.content_summary .news_box .news_text{
+  color:#999;
+}
+
 
 .content_summary a.summary_link{
   position: absolute;
@@ -773,6 +786,8 @@ header.active .sitemap{
 .content_summary a.summary_link:hover span.icon_arrow:after{
    background-position: -108px -49px;
 }
+
+
 
 
 
