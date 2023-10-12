@@ -737,18 +737,49 @@ header.active .sitemap{
   margin-bottom:30px;
 }
 .content_summary .desc_box{
-  margin-bottom:30px;
-}
-.content_summary .desc_box .news_box{}
-.content_summary .news_box a{
-  
+  margin-bottom:40px;
 }
 .content_summary .news_box .news_title{
   color:#000;
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom:1em;
+  /*한줄 말줄임을 위하 속성 설정*/
+  display: block;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow: ellipsis;
 }
 .content_summary .news_box .news_text{
   color:#999;
+  font-size: 15px;
+  /*여러줄 말줄임*/
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+    -webkit-line-clamp:2;/*표시할 줄 수*/
 }
+
+.content_summary .desc_box .career_text{
+    font-size: 18px;
+    font-weight: bold;
+    /*여러줄 말줄임*/
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+    -webkit-line-clamp:3; /*표시할 줄 수*/
+}
+
+.content_summary .summary_stock{}
+.content_summary .summary_stock .stock_info_box{}
+.content_summary .stock_info_box .stock_price_box{}
+.content_summary .stock_info_box .stock_price_box .price{}
+.content_summary .stock_info_box .stock_price_box .type5{}
+.content_summary .summary_stock .date{}
+
+
+
+
 
 
 .content_summary a.summary_link{
