@@ -696,11 +696,14 @@ header.active .sitemap{
 
 .main_content ul.content_summary{
   display: flex;
+  flex-wrap:wrap;/*추가 미디어쿼리위해서*/
+
   /*
   기본값
   flex-direction: row;
   justify-content: flex-start;
   align-items: stretch;
+  
   */
 }
 .content_summary li.summary_container{
@@ -731,18 +734,53 @@ header.active .sitemap{
    display: none;
 }
 
+/*992px 이하의 li.summary_container 화면 설정*/
 @media (max-width:992px){
+  .main_content{
+    padding-top:150px;
+  }
+
   /* 2단 */
   .content_summary li.summary_container{
     width:50%;
+    margin-bottom:100px;
   }
-}
+  .content_summary li.summary_container:first-child{
+    width:50%;
+  }
+  .content_summary li.summary_container:last-child{
+    width:50%;
+  }
+  .content_summary li.summary_container:nth-child(2)::after{
+    display: none;/*두번째 summary 선 없애기*/
+  }
+  .content_summary li.summary_container:nth-child(3){
+    padding-left:0;
+  }
+
+
+}/*@media (max-width:992px)*/
+
+
+
 @media (max-width:768px){
   /* 1단 */
   .content_summary li.summary_container{
     width:100%;
+    padding:0;
   }
-}
+  .content_summary li.summary_container:after{
+    display: none;
+  }
+  .content_summary li.summary_container:first-child{
+    width:100%;
+  }
+  .content_summary li.summary_container:last-child{
+    width:100%;
+  }
+
+
+}/*@media (max-width:768px){*/
 
 
 
