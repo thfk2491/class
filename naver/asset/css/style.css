@@ -782,7 +782,6 @@ header.active .sitemap{
     width:100%;
   }
 
-
 }/*@media (max-width:768px){*/
 
 
@@ -865,11 +864,6 @@ header.active .sitemap{
   text-align: right;
 }
 
-
-
-
-
-
 .content_summary a.summary_link{
   position: absolute;
   /* left:auto; */
@@ -907,6 +901,66 @@ header.active .sitemap{
 }
 
 
+  .content_service{
+    margin-top:100px;
+   }
+
+  .content_service ul.service_list_container{
+     display: flex;
+     /* flex-direction: row; */
+     flex-wrap: wrap;
+
+  }
+  .content_service ul.service_list_container li.service_thumbnail_box{
+    position: relative;/*.description 기준요소*/
+    /* flex item */
+    /* 기본값 flex-grow: 0; flex-shrink: 1; flex-basis: auto; */
+    flex:none;
+    /*  flex:none;와 동일 flex-grow: 0; flex-shrink: 0; flex-basis: auto; */
+    width:33.333%; /*3단*/
+    overflow: hidden;
+    
+  }
+  
+  .content_service .service_thumbnail_box .thumbnail{}
+  .content_service .service_thumbnail_box .thumbnail a{
+    display: block;
+  }
+  .content_service .service_thumbnail_box .thumbnail a img{
+    display: block; width: 100%;
+  }
+  .content_service .service_thumbnail_box .description{
+    position: absolute;
+    left:0; bottom:0;
+    transform: translateY(100%);
+    width:100%; height: auto;
+    padding-top:50px;
+    padding-left:30px;
+    padding-bottom:2em;
+    /*background-color: rgba(0,0,0,0.5); 테스트*/
+    transition: transform 0.1s;
+  }
+  .content_service .service_thumbnail_box:hover .description{
+    /*service_thumbnail_box 마우스오버시 .description 위치 변경  */
+    transform: translateY(0);
+    transition: transform 0.3s;
+  }
+  .content_service .service_thumbnail_box .description dl{
+    color:#fff;
+  }
+  .content_service .service_thumbnail_box .description dl dt{
+    font-size: 22px;
+    margin-bottom:2px
+  }
+  .content_service .service_thumbnail_box .description dl dd{
+     /*한줄 말줄임을 위하 속성 설정*/
+     display: block;
+   white-space:nowrap;
+  overflow:hidden;
+  text-overflow: ellipsis;
+  }
+
+ 
 
 
 
