@@ -919,6 +919,9 @@ header.active .sitemap{
     
   }
 
+ 
+
+
   .content_service ul.service_list_container li.service_thumbnail_box::after{
     /* 마우스 오버할경우 overlay칼라용 */
     content: '';
@@ -974,6 +977,40 @@ header.active .sitemap{
    white-space:nowrap;
   overflow:hidden;
   text-overflow: ellipsis;
+  }
+
+  @media (max-width:1024px) {
+    .content_service ul.service_list_container{
+      gap:20px;
+    }
+    .content_service ul.service_list_container li.service_thumbnail_box{
+      box-sizing: border-box;/*설정이되어 있어야지 2단이 정상으로 표시*/
+      width:calc(50% - 10px);
+      border: 1px solid #efefef;
+      box-shadow: 0 0 5px 2px rgba(204, 204, 204, 0.8);
+    }
+    .content_service ul.service_list_container li.service_thumbnail_box::after{
+      /* 오버레이표시하지 않기 위해*/
+      display: none;
+    }
+    .content_service .service_thumbnail_box .description{
+      /*일반흐름에 포함 li(부모) .description요소의 높이를 인식*/
+      position: static;
+      transform: translateY(0);
+      padding:1em;
+    }
+    .content_service .service_thumbnail_box .description dl{
+      color:#000;
+    }
+  }
+
+  @media (max-width:576px) {
+    .content_service ul.service_list_container{
+      gap:30px;
+    }
+    .content_service ul.service_list_container li.service_thumbnail_box{
+      width:100%;
+    }
   }
 
  
