@@ -1063,10 +1063,43 @@ header.active .sitemap{
 .content_support  li.support_list_box{
   flex:none;
   width:25%;
-
+  
   border: 1px solid #000;/*테스트*/
 }
+.content_support  .support_list_box a {
+  position: relative;
+  display: block;
+  text-align: center;
+  padding:135px 10px 0;
+  
+}
+.content_support  .support_list_box a:after {
+  content:'';
+  position: absolute;
+  left:0; top:0;
+  transform: translate(-50%,-50%); /*요소가 크기랑 상관없이 가운데 위치*/
+  background-image: url(../image/sprite.png);
+  background-repeat: no-repeat;
+  background-position: 0px -950px;
+}
+.content_support  .support_list_box a.ceators:after {}
+.content_support  .support_list_box a.business:after {}
+.content_support  .support_list_box a.developers:after {}
+.content_support  .support_list_box a.flower:after {}
+
+
 .content_support  .support_list_box dl{}
-.content_support  .support_list_box dd{}
-.content_support  .support_list_box dt{}
+.content_support  .support_list_box dt{
+  font-size: 17px;
+  font-weight: bold;
+  color:var(--primary-color);
+  margin-bottom: 1.5em;
+}
+.content_support  .support_list_box:hover dt{
+   text-decoration: underline;
+}
+.content_support  .support_list_box dd{
+  font-size: 15px;
+ color:#999;
+}
 
