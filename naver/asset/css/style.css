@@ -148,11 +148,17 @@ html {
 .text_line-rt,
 .text_line-rm{
   display: block;
+  /*한중일 경우 단어단위로 줄바꿈*/
+  word-break: keep-all;
 }
 
 .text_block-rt,
 .text_block-rm{
   display: inline;
+}
+
+@media (max-width:1400px){
+  .text_line{display: inline;}
 }
 
 @media (max-width:768px){
@@ -1052,6 +1058,8 @@ header.active .sitemap{
 .content_support .support_info_top .support_text{
   font-size:18px;
   line-height: 1.6;
+  /* 단어단위로 줄바꿈 한중일언어 */
+  word-break: keep-all;
 }
 
 
@@ -1118,11 +1126,13 @@ header.active .sitemap{
 .content_support  .support_list_box dd{
   font-size: 15px;
  color:#999;
+  /* 단어단위로 줄바꿈 한중일언어 */
+  word-break: keep-all;
 }
 
 @media (max-width:1024px) {
   /* easy 스킨에서 사용하는 모바일에서 수펴으로 표시되면서 스크롤 되게 처리 */
-  
+
   .content_support ul.support_list_container{
     /* 선수조건 */
     overflow-x:auto;
@@ -1135,6 +1145,7 @@ header.active .sitemap{
   .content_support ul.support_list_container::-webkit-scrollbar{
     /* 스크롤바 없애기 */
     /* display: none; */
+    /* 스크롤바 스타일 주기 */
     width:100%;
     height: 4px;
     background-color: rgba(200, 200, 200, 0.3);
@@ -1142,10 +1153,9 @@ header.active .sitemap{
   .content_support ul.support_list_container::-webkit-scrollbar-thumb{
     background-color: rgba(0,0,0,0.4);
   }
-
-
   .content_support li.support_list_box{
-    min-width:400px; 
+    min-width:320px; 
+    width:calc(33.33vw + 50px);
     /* 스크롤시 스냅 scroll-snap-align
       값 start | center | end
     */
@@ -1153,3 +1163,20 @@ header.active .sitemap{
   }
 
 }
+
+@media (max-width:768px){
+   /* 화면에 1+ */
+  .content_support li.support_list_box{
+    min-width: 320px;
+    width: calc(50vw + 100px);
+  }
+}
+
+@media (max-width:576px){
+ /* 화면에 1+ */
+ .content_support li.support_list_box{
+    min-width: 300px;
+    width: calc(100%-80px);
+ }
+}
+
