@@ -191,6 +191,14 @@ html {
 }
 
 
+#wrap{
+  position: relative;
+  min-height: 100%;
+}
+
+/* 
+main page
+*/
 /* header */
 header{
   position: fixed;
@@ -1186,8 +1194,45 @@ header.active .sitemap{
 }
 
 /* footer */
-footer{}
+footer{
+  position: absolute;
+  left:0; bottom:0;
+  width:100%;
+  background-color: #efefef;
+  
+}
 footer .footer_wrap{
   display: flex;
-  background-color: #f00;
+  max-width:1440px;
+  margin:0 auto;
+  border: 1px solid #000;
+  padding:70px 0;
+}
+footer strong.footer_logo{
+  width: 63px;
+  height: 13px;
+  background: url(../image/footer_logo.png) no-repeat;
+  background-size: 63px 13px;
+  order:1;
+}
+footer .footer_menu{
+  display: flex;
+  order:2;
+  margin-left:2em;
+}
+footer .affiliate_box{
+  order:4;
+  margin-left:auto;
+}
+footer .affiliate_box .btn_affiliate{}
+footer .affiliate_box ul.affiliate_list{
+  position: absolute;
+}
+footer .affiliate_box li.affiliate_item {}
+
+footer .footer_copy{
+  position: absolute;
+  left:50%;
+  transform:translateX(-50%);
+  
 }
