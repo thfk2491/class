@@ -161,6 +161,11 @@ html {
   .text_line{display: inline;}
 }
 
+@media (max-width:1200px){
+  .text_line{display: block;}
+}
+
+
 @media (max-width:768px){
   .text_line-rt{ display: inline !important; }
   .text_block-rt{ display: block !important;  }
@@ -1180,3 +1185,9 @@ header.active .sitemap{
  }
 }
 
+/* footer */
+footer{}
+footer .footer_wrap{
+  display: flex;
+  background-color: #f00;
+}
