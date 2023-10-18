@@ -1218,8 +1218,27 @@ footer strong.footer_logo{
 footer .footer_menu{
   display: flex;
   order:2;
-  margin-left:2em;
+  margin-left:1em;
 }
+footer ul.footer_menu li{
+  position: relative;
+  padding:0 0.5em;
+}
+footer ul.footer_menu li:after{
+  content: '';
+  position: absolute;
+  right:0; top:2px; width: 1px; height: calc(100% - 4px);
+  background-color: #999;
+}
+footer ul.footer_menu li:last-child:after{
+  display: none;
+}
+
+footer ul.footer_menu li a.footer_menu_item{
+  color:#999;
+}
+
+
 footer .affiliate_box{
   order:4;
   margin-left:auto;
@@ -1234,5 +1253,7 @@ footer .footer_copy{
   position: absolute;
   left:50%;
   transform:translateX(-50%);
+  font-weight: bold;
+  color:#999
   
 }
