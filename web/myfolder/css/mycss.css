@@ -1,0 +1,30 @@
+.my-banner{
+  --my-banner-top-padding:0px;
+  --my-banner-bottom-padding:0px;
+  --my-banner-wrap-width:100%;
+  --my-banner-gap:0px;
+}
+.my-banner-wrap{
+  padding-top:var(--my-banner-top-padding);
+  padding-bottom:var(--my-banner-bottom-padding);
+  width:var(--my-banner-wrap-width);
+  margin:0 auto;
+
+  border: 1px solid #000;
+}
+.my-banner-wrap .my-banner-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap:var(--my-banner-gap);
+}
+.my-banner-wrap .my-banner-container li{
+  flex:none;
+  box-sizing: border-box;
+}
+.my-banner-wrap .my-banner-container.col1 li{ width:100%; gap:0;}
+.my-banner-wrap .my-banner-container.col2 li{ width:calc(50% - var(--my-banner-gap))}
+.my-banner-wrap .my-banner-container.col3 li{ width:calc(33.333% - var(--my-banner-gap));}
+.my-banner-wrap .my-banner-container.col4 li{ width:calc(25% - var(--my-banner-gap))}
+.my-banner-wrap .my-banner-container li a{ display: block; }
+.my-banner-wrap .my-banner-container li a img{ display: block; width:100%; height: auto;}
