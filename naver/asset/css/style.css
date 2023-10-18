@@ -1240,20 +1240,88 @@ footer ul.footer_menu li a.footer_menu_item{
 
 
 footer .affiliate_box{
+  position: relative; /*ul.affiliate_list 기준*/
   order:4;
   margin-left:auto;
 }
-footer .affiliate_box .btn_affiliate{}
-footer .affiliate_box ul.affiliate_list{
-  position: absolute;
+footer .affiliate_box .btn_affiliate{
+  position: relative;
+  border:0;
+  cursor: pointer;/*마우스 손가락모양*/
+  padding-right: 26px;
 }
-footer .affiliate_box li.affiliate_item {}
+footer .affiliate_box .btn_affiliate:after{
+  content: '';
+  position: absolute;
+  right: 0; top:0; width: 16px; height: 16px;
+  background-image: url(../image/sprite.png);
+  background-repeat: no-repeat;
+  background-position: -222px -26px;
+}
+
+footer .affiliate_box ul.affiliate_list{
+  display: none;
+  position: absolute;
+  width: 200px;
+  right:0; bottom: 0;
+  background-color: #fff;
+  padding:25px 0;
+  border: 1px solid #999;
+}
+/* .btn_affiliate 을 클릭하면  [aria-expanded="true"] .affiliate_list표시*/
+/* .btn_affiliate[aria-expanded="true"] ~ ul.affiliate_list 
+.btn_affiliate의 속성 중  aria-expanded 값이 "true" 면 바로 뒤에 형제(인접형제) .affiliate_list
+*/
+footer .affiliate_box .btn_affiliate[aria-expanded="true"] ~ ul.affiliate_list{
+  display: block;
+}
+
+footer .affiliate_box li.affiliate_item {
+  margin-top:13px;
+}
+footer .affiliate_box li.affiliate_item:first-child {
+  margin-top:0px;
+}
+
+footer .affiliate_box li.affiliate_item a {
+  position: relative;
+  display: block;
+  color:#999;
+  padding:0 24px;
+  font-size:0.8em;
+}
+footer .affiliate_box li.affiliate_item:hover a {
+  color:var(--primary-color)
+}
+footer .affiliate_box li.affiliate_item a span {
+  position: relative;
+  padding-right:30px;
+  
+}
+/* 마우스 오버시 글자 옆에 아이콘표시 */
+footer .affiliate_box li.affiliate_item:hover a span::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top:0; right: 0; width:18px; height: 18px;
+  background-image: url(../image/sprite.png);
+  background-repeat: no-repeat;
+  background-position: -104px -68px;
+}
 
 footer .footer_copy{
   position: absolute;
   left:50%;
   transform:translateX(-50%);
-  font-weight: bold;
+  font-weight: 700;
   color:#999
-  
 }
+footer .footer_copy strong{
+  font-weight: 900;
+}
+
+
+
+
+
+
