@@ -1,0 +1,14 @@
+/* #header.fixed 수정 */
+#header.fixed {background-color: rgba(255,255,255,0.7);}
+#header.fixed .inner .top_nav_box{background-color: transparent;}
+
+/* 로고숨기기 */
+#header.fixed .inner .top_nav_box .top_logo{display: none !important;}
+/* #header.fixed 수정 끝 */
+
+
+/* 상품 모서리둥글게 */
+.main_product_slide .ec-base-product .prdList .thumbnail{
+  border-radius: 10px;
+  overflow: hidden;
+}
