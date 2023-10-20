@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>플렉스 복습2</title>
+  <style>
+    *{margin:0; padding:0; }
+    .wrap{margin:50px;}
+    /* item 요소를 여러줄 */
+    .flex-container{
+      box-sizing: border-box;
+      display: flex;      flex-direction: row;      justify-content: flex-start;
+      /* align-items: flex-start; */
+      align-content: flex-start;/*여러줄 교차축 정렬*/
+      flex-wrap: wrap; /*item 요소를 여러줄*/
+      background-color: #ccc;
+      border: 1px solid #000;
+    }
+    .flex-item{
+      flex:none; box-sizing: border-box;
+      background-color: #f6c;
+      border: 1px solid #f00;
+    }
+    /* 
+     item1 400px 
+     item2 부모의 너비에서 item1이 사용한너비 뺀 남은거 다쓴다
+    */
+    .flex-item:nth-child(1){width:400px;}
+    .flex-item:nth-child(2){width:calc(100% - 400px)}
+    .flex-item:nth-child(3){width:400px; padding-top:50px; padding-bottom:50px}
+    .flex-item:nth-child(4){width:calc(100% - 400px); padding-top:50px; padding-bottom:50px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="flex-container">
+      <!-- .flex-item*2>{item$} -->
+      <div class="flex-item">item1</div>
+      <div class="flex-item">item2</div>
+      <div class="flex-item">item3</div>
+      <div class="flex-item">item4</div>
+    </div>
+  </div>
+</body>
+</html>
