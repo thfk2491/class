@@ -1,12 +1,15 @@
 /* footer 수정 css 시작*/
 #footer{
   --my-footer-logo-width:400px;
+  --my-footer-inner-padding-top:70px;
 }
 #footer .inner{
+  position: relative;
   flex-direction: row;
   flex-wrap: wrap;
   /* 교차축정렬 */
   align-items: flex-start;
+  padding-top:var(--my-footer-inner-padding-top);
 }
 /* #footer 1 content */
 #footer .inner .bt_logo{
@@ -47,9 +50,14 @@
   margin-top:0;
 }
 #footer .inner .bt_wrap .bt_info .title{display: none;}/*추가*/
+
 #footer .inner .bt_wrap .bt_cscenter{
-  /* text-align: right; */
+  position: absolute;
+  right:0; 
+  top:var(--my-footer-inner-padding-top);
+
 }
+
 #footer .inner .bt_wrap  .bt_cscenter .title{font-size: 1.2em;}
 #footer .inner .bt_wrap  .bt_cscenter .bt_txt01 span:last-child{
   font-size: 2em;
@@ -87,10 +95,17 @@
 }
 
 #footer .inner .bt_wrap2 .bt_copyright{
-  order:2; width:100%;
+  position: absolute;
+  left: 0; bottom: 10px;  
+  text-align: center;
+  order:2; 
+  width:100%;
   box-sizing: border-box;
 }
 #footer .inner .bt_wrap2 .bt_sns{
-  order:1; width:100%;
+   order:1; width:100%;
   box-sizing: border-box;
+  /* padding-bottom:1em; */
 }
+
+/* footer 수정 완료 */
