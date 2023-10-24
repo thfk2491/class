@@ -1,0 +1,8 @@
+/*띠배너 수정*/
+#topBanner{z-index:1100;}
+#topBanner ~ #header{top:38px;}
+#main #topBanner.hidden ~ #header,
+#topBanner.hidden ~ #header  {top:0px;}
+#main #header.fixed,
+#header.fixed{top:0; transition:top 0.1s;}
+/*띠배너 수정끝*/
