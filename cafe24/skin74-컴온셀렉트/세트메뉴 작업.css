@@ -1,0 +1,78 @@
+/* 
+   요구사항
+   1.  세트메뉴 2단   .my-container.my-set .main_product_list{}
+   2.  세트분류의 1번 상품 크게
+   3.  세트1 분류 2,3번 상품 작게
+
+   세트1분류   section.main_product_list
+   세트2분류   section.main_product_list
+   수평
+*/
+
+
+
+/* 변수선언 */
+.my-container.my-set{
+  --my-main_product_list-gap:20px;
+  --my-prdList-gap:10px;
+}
+
+/* 요구사항 1 */
+/* 세트메뉴 설정 */
+.my-container.my-set{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap:var(--my-main_product_list-gap)
+}
+.my-container.my-set .main_product_list{
+  flex:none;
+  width:calc(50% - var(--my-main_product_list-gap));
+  box-sizing: border-box;
+}
+
+
+/* 요구사항 2,3번 */
+/* section내 메인분류의 상품 모듈 */
+.my-container.my-set .main_product_list .xans-product-listmain{}
+
+/* section내 메인분류 상품포함하는  ul */
+.my-container.my-set .main_product_list .xans-product-listmain .prdList{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap:var(--my-prdList-gap);
+  box-sizing: border-box;
+}
+/* section내 메인분류 상품 li */
+.my-container.my-set .xans-product-listmain .prdList > li{
+  flex:none;
+  box-sizing: border-box;
+}
+
+/* 요구사항     2.  세트분류의 1번 상품 크게  3.  세트1 분류 2,3번 상품 작게 */
+.my-container.my-set .xans-product-listmain .prdList > li:nth-child(1){
+  width:calc(60% - var(--my-prdList-gap));
+}
+.my-container.my-set .xans-product-listmain .prdList > li:nth-child(2),
+.my-container.my-set .xans-product-listmain .prdList > li:nth-child(3){
+  width:calc(40% - var(--my-prdList-gap));
+}
+.my-container.my-set .xans-product-listmain .prdList > li:nth-child(2){}
+.my-container.my-set .xans-product-listmain .prdList > li:nth-child(3){}
+
+/* section내 메인분류 상품 li 썸네일 */
+.my-container.my-set .xans-product-listmain .prdList > li .thumbnail{}
+.my-container.my-set .xans-product-listmain .prdList > li .thumbnail >a{
+  display: block;
+}
+.my-container.my-set .xans-product-listmain .prdList > li .thumbnail >a>img{
+  display: block;
+}
+
+/* section내 메인분류 상품 li 상품정보 */
+.my-container.my-set .xans-product-listmain .prdList > li .description{
+  display: none; /*테스트용*/
+}
