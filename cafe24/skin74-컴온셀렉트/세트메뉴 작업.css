@@ -48,7 +48,7 @@
   align-items: flex-start;
   gap:var(--my-prdList-gap);
   box-sizing: border-box;
-  border: 1px solid #000; /*테스트용*/
+ 
 }
 /* section내 메인분류 상품 li */
 .my-container.my-set .xans-product-listmain .prdList > li{
@@ -58,11 +58,11 @@
 
 /* 요구사항     2.  세트분류의 1번 상품 크게  3.  세트1 분류 2,3번 상품 작게 */
 .my-container.my-set .xans-product-listmain .prdList > li:nth-child(1){
-  width:calc(50% - var(--my-prdList-gap));
+  width:calc(60% - var(--my-prdList-gap));
 }
 .my-container.my-set .xans-product-listmain .prdList > li:nth-child(2),
 .my-container.my-set .xans-product-listmain .prdList > li:nth-child(3){
-  width:calc(50% - var(--my-prdList-gap));
+  width:calc(40% - var(--my-prdList-gap));
 }
 .my-container.my-set .xans-product-listmain .prdList > li:nth-child(2){}
 .my-container.my-set .xans-product-listmain .prdList > li:nth-child(3){
@@ -77,12 +77,14 @@
 .my-container.my-set .xans-product-listmain .prdList > li .thumbnail{}
 .my-container.my-set .xans-product-listmain .prdList > li:nth-child(1) .thumbnail{
   position: relative; 
-  padding-top:calc(100% + 10% + 10% + var(--my-prdList-gap));
+  /* padding-top:calc(100% + 10% + 10% + var(--my-prdList-gap)); */
+  padding-top:calc(100% + var(--my-prdList-gap));
 }
 .my-container.my-set .xans-product-listmain .prdList > li:nth-child(2) .thumbnail,
 .my-container.my-set .xans-product-listmain .prdList > li:nth-child(3) .thumbnail{
   position: relative;
-  padding-top:calc(50% + 10% - (var(--my-prdList-gap) / 2));
+  /* padding-top:calc(50% + 10% - (var(--my-prdList-gap) / 2)); */
+  padding-top:calc(50% + 25% - (var(--my-prdList-gap) / 2));
 }
 .my-container.my-set .xans-product-listmain .prdList > li .thumbnail >a{
   display: block;
@@ -116,9 +118,26 @@
   max-width: none; 
 }
 
-/* section내 메인분류 상품 li 상품정보 */
-.my-container.my-set .xans-product-listmain .prdList > li .description{
-  display: none; /*테스트용*/
+.my-container.my-set .main_product_list:nth-child(1)  .xans-product-listmain .prdList > li:nth-child(3) .thumbnail >a >img{
+  object-position: 50% 0px;
 }
 
+/* section내 메인분류 상품 li 상품정보 */
+.my-container.my-set .xans-product-listmain .prdList > li .description{
+
+}
+
+/* 타블렛 모방일 설정 */
+@media (max-width:767.98px){
+  .my-container.my-set{
+    gap:0;
+    flex-wrap: wrap;
+  }
+  .my-container.my-set .main_product_list{
+    width:100%;
+  }
+  
+}
+
+/* 세트메뉴 설정 끝 */
 
