@@ -1,0 +1,35 @@
+/* 아이베이스 세트메뉴 설정 css시작 */
+
+/* li.xans-record-:hover 시  .description 표시*/
+.my-set .xans-product-listmain li.xans-record- .prdList__item{
+  position: relative;
+  overflow: hidden;
+}
+.my-set .xans-product-listmain li.xans-record- .prdList__item .description{
+  position: absolute;
+  left:0; bottom:0;
+  width:100%; 
+  padding:2em 1em;
+  box-sizing: border-box;
+  background-color: rgba(0,0,255,0.7);
+  transform: translateY(100%);
+  opacity:0;
+  transition: all 0.1s;
+}
+.my-set .xans-product-listmain li.xans-record- .prdList__item .description .spec{
+  margin-top:5px;
+}
+.my-set .xans-product-listmain li.xans-record- .prdList__item .description .spec > li{
+  margin-bottom:0px;
+}
+
+.my-set .xans-product-listmain li.xans-record-:hover .prdList__item .description{
+  transform: translateY(0);
+  background-color: rgba(255,0,0,0.7);
+  opacity:1;
+  transition: all 0.8s;
+}
+
+
+
+/* 아이베이스 세트메뉴 설정 css끝 */
