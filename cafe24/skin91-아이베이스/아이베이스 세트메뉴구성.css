@@ -30,6 +30,140 @@
   transition: all 0.8s;
 }
 
+/* 세트메뉴 1크고 , 2,3 작게 */
 
+/* 변수선언 */
+.my-container.my-set{
+  --my-main_product_list-gap:20px;
+  --my-prdList-gap:10px;
+}
+
+/* 요구사항 1 */
+/* 세트메뉴 설정 */
+.my-container.my-set{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap:var(--my-main_product_list-gap);
+  margin-left:auto;
+  margin-right:auto;
+}
+/* .my-container.my-set .main_product_list{  ->  .my-container.my-set .xans-product-listmain */
+.my-container.my-set .xans-product-listmain{
+  flex:none;
+  width:calc(50% - var(--my-main_product_list-gap));
+  box-sizing: border-box;
+}
+
+
+/* 요구사항 2,3번 */
+/* section내 메인분류의 상품 모듈 */
+.my-container.my-set .main_product_list .xans-product-listmain{}
+
+/* section내 메인분류 상품포함하는  ul */
+/* .my-container.my-set .main_product_list .xans-product-listmain .prdList{ 
+  ↓
+  .my-container.my-set  .xans-product-listmain .prdList{
+  
+  */
+.my-container.my-set  .xans-product-listmain .prdList{
+  position: relative; /*아이템3번을 위해서*/
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap:var(--my-prdList-gap);
+  box-sizing: border-box;
+ 
+}
+/* section내 메인분류 상품 li */
+.my-container.my-set .xans-product-listmain .prdList > li{
+  flex:none;
+  box-sizing: border-box;
+}
+
+/* 요구사항     2.  세트분류의 1번 상품 크게  3.  세트1 분류 2,3번 상품 작게 */
+.my-container.my-set .xans-product-listmain .prdList > li:nth-child(1){
+  width:calc(60% - var(--my-prdList-gap));
+}
+.my-container.my-set .xans-product-listmain .prdList > li:nth-child(2),
+.my-container.my-set .xans-product-listmain .prdList > li:nth-child(3){
+  width:calc(40% - var(--my-prdList-gap));
+}
+.my-container.my-set .xans-product-listmain .prdList > li:nth-child(2){}
+.my-container.my-set .xans-product-listmain .prdList > li:nth-child(3){
+  position: absolute; right: 0; bottom:0;
+}
+
+/* section내 메인분류 상품 li 썸네일 */
+
+.my-container.my-set .xans-product-listmain .prdList > li .prdList__item{
+  margin:0;
+}
+.my-container.my-set .xans-product-listmain .prdList > li .thumbnail{}
+.my-container.my-set .xans-product-listmain .prdList > li:nth-child(1) .thumbnail{
+  position: relative; 
+  /* padding-top:calc(100% + 10% + 10% + var(--my-prdList-gap)); */
+  padding-top:calc(100% + var(--my-prdList-gap));
+}
+.my-container.my-set .xans-product-listmain .prdList > li:nth-child(2) .thumbnail,
+.my-container.my-set .xans-product-listmain .prdList > li:nth-child(3) .thumbnail{
+  position: relative;
+  /* padding-top:calc(50% + 10% - (var(--my-prdList-gap) / 2)); */
+  padding-top:calc(50% + 25% - (var(--my-prdList-gap) / 2));
+}
+.my-container.my-set .xans-product-listmain .prdList > li .thumbnail >a{
+  display: block;
+}
+.my-container.my-set .xans-product-listmain .prdList > li:nth-child(1) .thumbnail >a{
+  position: absolute; left:0; top:0;
+  width:100%;
+  height: 100%;
+}
+.my-container.my-set .xans-product-listmain .prdList > li:nth-child(2) .thumbnail > a,
+.my-container.my-set .xans-product-listmain .prdList > li:nth-child(3) .thumbnail > a{
+  position: absolute; left:0; top:0;
+  width:100%;
+  height: 100%;
+}
+.my-container.my-set .xans-product-listmain .prdList > li .thumbnail >a>img{
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+.my-container.my-set .xans-product-listmain .prdList > li:nth-child(1) .thumbnail >a>img{
+  width: 100%;
+  height: 100%;
+  max-width: none;
+}
+
+.my-container.my-set .xans-product-listmain .prdList > li:nth-child(2) .thumbnail >a > img,
+.my-container.my-set .xans-product-listmain .prdList > li:nth-child(3) .thumbnail >a >img{
+  width: 100%;
+  height: 100%;
+  max-width: none; 
+}
+
+.my-container.my-set .main_product_list:nth-child(1)  .xans-product-listmain .prdList > li:nth-child(3) .thumbnail >a >img{
+  object-position: 50% 0px;
+}
+
+/* section내 메인분류 상품 li 상품정보 */
+.my-container.my-set .xans-product-listmain .prdList > li .description{
+
+}
+
+/* 타블렛 모방일 설정 */
+@media (max-width:767.98px){
+  .my-container.my-set{
+    gap:0;
+    flex-wrap: wrap;
+  }
+  .my-container.my-set .main_product_list{
+    width:100%;
+  }
+  
+}
 
 /* 아이베이스 세트메뉴 설정 css끝 */
