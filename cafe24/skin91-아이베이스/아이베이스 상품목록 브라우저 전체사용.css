@@ -1,0 +1,12 @@
+/* 아이베이스 상품목록 상단 이미지 브라우저 전체사용 */
+
+.xans-product-headcategory.titleArea{
+  /* #content 여백 너비 조정 */
+  position: relative;
+  
+  
+}
+.xans-product-headcategory.titleArea .banner{
+  position: absolute;
+}
+.xans-product-headcategory.titleArea .banner img{}
