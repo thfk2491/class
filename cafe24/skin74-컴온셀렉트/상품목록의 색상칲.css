@@ -1,0 +1,11 @@
+/* 상품목록의 색상칲 */
+.ec-base-product .spec .color{}
+.ec-base-product .spec .chips{
+  width:20px; 
+  height: 4px;
+  /* 
+   height: 6px;
+   border-radius: 6px;
+  */
+ 
+}
