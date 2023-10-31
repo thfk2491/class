@@ -1,0 +1,11 @@
+
+#contents > .section[data-ez="contents-1yv3eiv-1"]{
+  width:100%;
+  max-width: none;
+  margin:0;
+  display: flex;
+}
+#contents > .section[data-ez="contents-1yv3eiv-1"]>div{flex:none;}
+#contents > .section[data-ez="contents-1yv3eiv-1"] .main_title{display: none;}
+#contents > .section[data-ez="contents-1yv3eiv-1"] .main_title_image{width:25%;}
+#contents > .section[data-ez="contents-1yv3eiv-1"] [data-ez-holder="product_listmain"]{width:75%;}
